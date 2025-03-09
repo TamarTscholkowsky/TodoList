@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\משתמש\\Documents\\praktikod\\prakt3\\TodoApi\\TodoApi.csproj": {}
+    "C:\\Users\\משתמש\\Documents\\praktikod\\prakt3\\TodoList\\TodoApi\\TodoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\משתמש\\Documents\\praktikod\\prakt3\\TodoApi\\TodoApi.csproj": {
+    "C:\\Users\\משתמש\\Documents\\praktikod\\prakt3\\TodoList\\TodoApi\\TodoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\משתמש\\Documents\\praktikod\\prakt3\\TodoApi\\TodoApi.csproj",
+        "projectUniqueName": "C:\\Users\\משתמש\\Documents\\praktikod\\prakt3\\TodoList\\TodoApi\\TodoApi.csproj",
         "projectName": "TodoApi",
-        "projectPath": "C:\\Users\\משתמש\\Documents\\praktikod\\prakt3\\TodoApi\\TodoApi.csproj",
+        "projectPath": "C:\\Users\\משתמש\\Documents\\praktikod\\prakt3\\TodoList\\TodoApi\\TodoApi.csproj",
         "packagesPath": "C:\\Users\\משתמש\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\משתמש\\Documents\\praktikod\\prakt3\\TodoApi\\obj\\",
+        "outputPath": "C:\\Users\\משתמש\\Documents\\praktikod\\prakt3\\TodoList\\TodoApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -65,6 +65,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.21.0, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
