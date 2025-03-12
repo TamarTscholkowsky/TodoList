@@ -26,12 +26,15 @@ function App() {
   }
 
   async function deleteTodo(id) {
+    
     await service.deleteTask(id);
     await getTodos();//refresh tasks list
   }
 
   useEffect(() => {
     getTodos();
+    console.log(todos)
+    debugger
   }, []);
 
   return (
