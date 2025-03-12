@@ -32,11 +32,11 @@ var app = builder.Build();
 app.UseRouting(); 
 app.UseCors("AllowSpecificOrigin");
 
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 app.MapGet("/", () => "Hello World!");
 
@@ -89,5 +89,7 @@ app.MapDelete("/tasks/{id}", async (ToDoDbContext context, int id) =>
     return Results.NotFound(new { message = "Task not found" });
 });
 
+
+app.MapGet( " /" , () => "AuthServer API is runing");
 app.Run();
 
