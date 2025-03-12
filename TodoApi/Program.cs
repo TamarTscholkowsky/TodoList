@@ -11,7 +11,7 @@ builder.Services.AddCors(options =>
  { 
     options.AddPolicy("AllowSpecificOrigin", 
 // הוספת מדיניות CORS 
-builder => { builder.WithOrigins("http://localhost:5000") 
+builder => { builder.WithOrigins("http://localhost:5000", "https://todolist-18cd.onrender.com") 
 // החלף בכתובת האתר שאתה רוצה לאפשר 
 .AllowAnyHeader() 
 .AllowAnyMethod(); }); });
