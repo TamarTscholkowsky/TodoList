@@ -8,9 +8,8 @@ function App() {
   async function getTodos(){
     const todos = await service.getTasks();
     setTodos(todos);
-    alert("llll");
-    console.log(todos);
-    debugger
+    console.log("נתונים שהוחזרו:", todos);
+    setTodos(Array.isArray(todos) ? todos : []);
   }
 
   async function createTodo(e) {
