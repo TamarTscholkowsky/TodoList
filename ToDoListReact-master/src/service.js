@@ -1,6 +1,6 @@
 import axios from 'axios';
-axios.defaults.baseURL = process.env.PATH; 
-let apiUrl = axios.defaults.baseURL 
+axios.defaults.baseURL =axios.defaults.baseURL ; 
+let apiUrl =  process.env.PATH
 //response
 // הוספת אינטרספטור לתגובות
 axios.interceptors.response.use(response => {
