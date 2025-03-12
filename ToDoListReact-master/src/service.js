@@ -1,5 +1,5 @@
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:3000'; 
+axios.defaults.baseURL = process.env.PATH; 
 let apiUrl = axios.defaults.baseURL 
 //response
 // הוספת אינטרספטור לתגובות
