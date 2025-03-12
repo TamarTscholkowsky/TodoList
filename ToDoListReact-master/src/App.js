@@ -8,6 +8,7 @@ function App() {
   async function getTodos(){
     const todos = await service.getTasks();
     setTodos(todos);
+    debugger
     console.log("נתונים שהוחזרו:", todos);
     setTodos(Array.isArray(todos) ? todos : []);
   }
