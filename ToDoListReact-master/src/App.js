@@ -4,13 +4,12 @@ import service from './service.js';
 function App() {
   const [newTodo, setNewTodo] = useState("");
   const [todos, setTodos] = useState([]);
-  const [iftodos,setiftodos]=useState(fase)
 
   async function getTodos(){
     const todos = await service.getTasks();
     setTodos(todos);
-    if(todos!=null)
-      setiftodos(true);
+    console.log(todos)
+    debugger
   }
 
   async function createTodo(e) {
@@ -44,7 +43,7 @@ function App() {
       </header>
       <section className="main" style={{ display: "block" }}>
         <ul className="todo-list">
-          {todos&&todos.map(todo => {
+          {todos.map(todo => {
             return (
               <li className={todo.isComplete ? "completed" : ""} key={todo.id}>
                 <div className="view">
