@@ -8,7 +8,8 @@ function App() {
   async function getTodos(){
     const todos = await service.getTasks();
     setTodos(todos);
-    console.log(todos)
+    alert("llll");
+    console.log(todos);
     debugger
   }
 
