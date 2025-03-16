@@ -11,8 +11,8 @@ builder.Services.AddCors(options =>
  { 
     options.AddPolicy("AllowSpecificOrigin", 
 // הוספת מדיניות CORS
-// "http://localhost:5000"
-builder => { builder.WithOrigins("https://todolist-18cd.onrender.com") 
+// 
+builder => { builder.WithOrigins("https://todolist-18cd.onrender.com","http://localhost:5000") 
 // החלף בכתובת האתר שאתה רוצה לאפשר 
 .AllowAnyHeader() 
 .AllowAnyMethod(); }); });
@@ -39,7 +39,9 @@ app.UseCors("AllowSpecificOrigin");
     app.UseSwaggerUI();
 //}
 
-app.MapGet("/", () => "Hello World!");
+
+
+
 
 app.MapGet("/time", () => DateTime.Now);
 
@@ -59,7 +61,7 @@ app.MapPost("/{name}", async (ToDoDbContext context, string name) =>
     };
     context.Tasks.Add(newTask);
     await context.SaveChangesAsync();
-    return Results.Created("/tasks/{newTask.Id}", newTask);
+    return Results.Created($"/tasks/{newTask.Id}", newTask);
     });
 
 app.MapPut("/tasks/{id}/{isComplete}", async (ToDoDbContext context, int id, bool isComplete) =>
