@@ -2,8 +2,8 @@ import axios from 'axios';
 // process.env.PATH
 // axios.defaults.baseURL 
 axios.defaults.baseURL = 'https://todolistserver1-uu5v.onrender.com';
-let apiUrl = 'https://todolistserver1-uu5v.onrender.com'
-
+// let apiUrl = 'https://todolistserver1-uu5v.onrender.com'
+const apiUrl = 'https://todolist-18cd.onrender.com';
 //response
 // הוספת אינטרספטור לתגובות
 axios.interceptors.response.use(response => {
