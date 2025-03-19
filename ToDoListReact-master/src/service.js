@@ -3,7 +3,7 @@ import axios from 'axios';
 // axios.defaults.baseURL 
 axios.defaults.baseURL = 'https://todolistserver1-uu5v.onrender.com';
 // let apiUrl = 'https://todolistserver1-uu5v.onrender.com'
-const apiUrl = 'https://todolist-18cd.onrender.com';
+const apiUrl = 'https://todolistserver1-uu5v.onrender.com';
 //response
 // הוספת אינטרספטור לתגובות
 axios.interceptors.response.use(response => {
