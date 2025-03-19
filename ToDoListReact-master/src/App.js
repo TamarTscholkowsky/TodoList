@@ -3,11 +3,7 @@ import service from './service.js';
 
 function App() {
   const [newTodo, setNewTodo] = useState("");
-  const [todos, setTodos] = useState([
-  {id:1,name:"yyyy",isComplete:true},
-  {id:4,name:"yyyy",isComplete:true},
-  {id:3,name:"yyyy",isComplete:true}
-  ]);
+  const [todos, setTodos] = useState([]);
 
   async function getTodos(){
     const todos = await service.getTasks();

@@ -2,6 +2,7 @@ import axios from 'axios';
 // process.env.PATH
 // axios.defaults.baseURL 
 axios.defaults.baseURL = 'https://todolistserver1-uu5v.onrender.com';
+
 // let apiUrl = 'https://todolistserver1-uu5v.onrender.com'
 const apiUrl = 'https://todolistserver1-uu5v.onrender.com';
 //response
@@ -20,7 +21,7 @@ export default {
   getTasks: async () => {
     debugger
     try{
-    const result = await axios.get(`${apiUrl}/tasks`)
+    const result = await axios.get(`/tasks`)
     return result.data;
     }
     catch(err){
