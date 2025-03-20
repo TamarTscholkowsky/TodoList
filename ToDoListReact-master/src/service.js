@@ -1,7 +1,7 @@
 import axios from 'axios';
 require('dotenv').config();
 // axios.defaults.baseURL 
-axios.defaults.baseURL =process.env.PATH;
+axios.defaults.baseURL =process.env.APP_API_URL;
 
 // const apiUrl = 'https://todolistserver1-uu5v.onrender.com';
 //response
