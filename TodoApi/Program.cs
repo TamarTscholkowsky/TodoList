@@ -3,8 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using TodoApi;
 using System.Diagnostics;
-
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,13 +11,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-
 using Microsoft.OpenApi.Models;
 using System;
-
 using System.Security.Claims;
 using System.Text;
-
 using Microsoft.AspNetCore.Http.HttpResults;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -70,6 +65,10 @@ app.UseCors("AllowSpecificOrigin");
     app.UseSwagger();
     app.UseSwaggerUI();
 //}
+//var baseUrl = builder.Configuration.GetSection("ApiConfig")["BaseUrl"];
+//Console.WriteLine($"The API BaseUrl is: {baseUrl}");
+var baseUrl = builder.Configuration.GetSection("ApiConfig")["BaseUrl"] ?? "Base URL not found!";
+Console.WriteLine($"The API BaseUrl is: {baseUrl}");
 
 
 
@@ -119,7 +118,7 @@ app.MapDelete("/tasks/{id}", async (ToDoDbContext context, int id) =>
     {
         context.Tasks.Remove(task);
         await context.SaveChangesAsync();
-        return Results.Ok(new { message = "Task with id ${id} deleted successfully" });
+        return Results.Ok(new { message = $"Task with id {id} deleted successfully"});
     }
     return Results.NotFound(new { message = "Task not found" });
 });
