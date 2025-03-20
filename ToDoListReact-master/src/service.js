@@ -3,8 +3,7 @@ import axios from 'axios';
 // axios.defaults.baseURL 
 axios.defaults.baseURL = 'https://todolistserver1-uu5v.onrender.com';
 
-// let apiUrl = 'https://todolistserver1-uu5v.onrender.com'
-const apiUrl = 'https://todolistserver1-uu5v.onrender.com';
+// const apiUrl = 'https://todolistserver1-uu5v.onrender.com';
 //response
 // הוספת אינטרספטור לתגובות
 axios.interceptors.response.use(response => {
@@ -13,42 +12,54 @@ axios.interceptors.response.use(response => {
 }, error => {
   // רישום השגיאה ללוג
   console.error('Error occurred:', error);
- 
+
   return Promise.reject(error);
 });
 
 export default {
   getTasks: async () => {
     debugger
-    try{
-    const result = await axios.get(`/tasks`)
-    return result.data;
+    try {
+      const result = await axios.get(`/tasks`)
+      return result.data;
     }
-    catch(err){
+    catch (err) {
       console.log(err)
     }
   },
 
-  addTask: async(name)=>{
+  addTask: async (name) => {
 
     console.log('addTask', name)
-    //TODO
-    const result = await axios.post(`${apiUrl}/${name}`)  
-      return result 
+    try {
+      const result = await axios.post(`/addTask`, name);
+      return result
+    }
+    catch (err) {
+      console.log(err)
+    }
   },
-// MapPut("/tasks/{id}"
-  setCompleted: async(id, isComplete)=>{
-    console.log('setCompleted', {id, isComplete})
-    //TODO
-    const result = await axios.put(`${apiUrl}/tasks/${id}/${isComplete}`, { isComplete })   
-    return result 
-  
+  // MapPut("/tasks/{id}"
+  setCompleted: async (id, isComplete) => {
+    console.log('setCompleted', { id, isComplete })
+    try {
+      const result = await axios.put(`/tasks/${id}/${isComplete}`, { isComplete })
+      return result
+    }
+    catch (err) {
+      console.log(err)
+    }
+
   },
 
-  deleteTask:async(id)=>{
-    console.log('deleteTask')
-    debugger
-    const result = await axios.delete(`${apiUrl}/tasks/${id}`)
-    return result.data
+  deleteTask: async (id) => {
+    try {
+      const result = await axios.delete(`/tasks/${id}`)
+      return result.data
+    }
+    catch (err) {
+      console.log(err)
+    }
+
   }
 };
