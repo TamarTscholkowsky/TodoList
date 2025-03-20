@@ -32,7 +32,7 @@ export default {
 
     console.log('addTask', name)
     try {
-      const result = await axios.post(`/addTask`, name);
+      const result = await axios.post(`/addTask/${name}`, name);
       return result
     }
     catch (err) {
