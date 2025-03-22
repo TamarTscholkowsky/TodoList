@@ -1,13 +1,13 @@
 // Import the required modules
-import express from "express"; // Import the Express framework for building web applications
-import axios from "axios"; // Import Axios for making HTTP requests
-import dotenv from 'dotenv';
-dotenv.config();
+// import express from "express"; // Import the Express framework for building web applications
+// import axios from "axios"; // Import Axios for making HTTP requests
+const axios = require('axios');
+const express = require('express');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const RENDER_API_KEY = rnd_NGFcDedXGwlIio3pJx3VUY2iQ3vG;
-const RENDER_API_URL =  'https://api.render.com/v1/services?includePreviews=true&limit=20';
+const RENDER_API_KEY = 'rnd_NGFcDedXGwlIio3pJx3VUY2iQ3vG';
+const RENDER_API_URL = 'https://api.render.com/v1/services';
 
 // יצירת endpoint של GET
 app.get('/apps', async (req, res) => {
