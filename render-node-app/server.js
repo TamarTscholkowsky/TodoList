@@ -13,7 +13,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 const app = express();
 app.use(cors())
-const PORT = 'https://todolistrender-node.onrender.com' || 3000;
+const PORT = process.env.PORT || 3000;
 const RENDER_API_KEY = 'rnd_NGFcDedXGwlIio3pJx3VUY2iQ3vG';
 const RENDER_API_URL ='https://api.render.com/v1/services?includePreviews=true&limit=20';
 
@@ -40,7 +40,7 @@ app.get('/apps', async (req, res) => {
 });
 
 // הפעלת השרת
-app.listen(8080, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
   console.log('Render API URL:', RENDER_API_URL);
    console.log('Render API Key:', RENDER_API_KEY ? 'Loaded' : 'Not loaded');
