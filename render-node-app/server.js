@@ -15,14 +15,16 @@ const app = express();
 app.use(cors())
 const PORT = 'https://todolistrender-node.onrender.com' || 3000;
 const RENDER_API_KEY = 'rnd_NGFcDedXGwlIio3pJx3VUY2iQ3vG';
-const RENDER_API_URL = 'https://api.render.com/v1/services';
+const RENDER_API_URL ='https://api.render.com/v1/services?includePreviews=true&limit=20';
 
+//'https://api.render.com/v1/services';
 // יצירת endpoint של GET
 app.get('/apps', async (req, res) => {
   try {
     // שליחת בקשה ל-Render API
     const response = await axios.get(RENDER_API_URL, {
       headers: {
+      accept:'application/json',
         Authorization: `Bearer ${RENDER_API_KEY}`,
       },
       
@@ -38,7 +40,7 @@ app.get('/apps', async (req, res) => {
 });
 
 // הפעלת השרת
-app.listen(PORT, () => {
+app.listen(8080, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
   console.log('Render API URL:', RENDER_API_URL);
    console.log('Render API Key:', RENDER_API_KEY ? 'Loaded' : 'Not loaded');
