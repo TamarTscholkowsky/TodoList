@@ -6,8 +6,8 @@ const express = require('express');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const RENDER_API_KEY = 'rnd_NGFcDedXGwlIio3pJx3VUY2iQ3vG';
-const RENDER_API_URL = 'https://api.render.com/v1/services';
+const RENDER_API_KEY = process.env.RENDER_API_KEY;
+const RENDER_API_URL = process.env.RENDER_API_URL;
 
 // יצירת endpoint של GET
 app.get('/apps', async (req, res) => {
