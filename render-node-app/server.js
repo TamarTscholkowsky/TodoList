@@ -1,10 +1,18 @@
 // Import the required modules
 // import express from "express"; // Import the Express framework for building web applications
 // import axios from "axios"; // Import Axios for making HTTP requests
-const axios = require('axios');
-const express = require('express');
+import cors from 'cors'
+import express from 'express'
+// import https from 'https'
+import dotenv from 'dotenv'
+// dotenv.config()
+// // import axios from 'axios'
 
+// // const axios = require('axios');
+// const express = require('express');
+dotenv.config()
 const app = express();
+app.use(cors())
 const PORT = process.env.PORT || 3000;
 const RENDER_API_KEY = process.env.RENDER_API_KEY;
 const RENDER_API_URL = process.env.RENDER_API_URL;
