@@ -59,3 +59,10 @@ axios.get(RENDER_API_URL, {
 .catch(error => {
   console.error('Error fetching services:', error.message);
 });
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+     console.log('Render API URL:', RENDER_API_URL);
+     console.log('Render API Key:', RENDER_API_KEY ? 'Loaded' : 'Not loaded');
+});
+
