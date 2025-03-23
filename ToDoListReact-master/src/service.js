@@ -1,4 +1,7 @@
 import axios from 'axios';
+
+
+require('dotenv').config();
 // require('dotenv').config();
 // axios.defaults.baseURL 
 axios.defaults.baseURL =process.env.REACT_APP_API_URL
