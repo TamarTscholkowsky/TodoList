@@ -17,6 +17,7 @@ app.get('/apps', async (req, res) => {
       headers: {
         Authorization: `Bearer ${RENDER_API_KEY}`,
       },
+      
     });
     
     // החזרת רשימת האפליקציות כ-JSON
@@ -31,4 +32,7 @@ app.get('/apps', async (req, res) => {
 // הפעלת השרת
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
+  console.log('Render API URL:', RENDER_API_URL);
+   console.log('Render API Key:', RENDER_API_KEY ? 'Loaded' : 'Not loaded');
+
 });
