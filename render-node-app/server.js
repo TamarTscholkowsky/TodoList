@@ -13,9 +13,9 @@ import dotenv from 'dotenv'
 dotenv.config()
 const app = express();
 app.use(cors())
-const PORT = process.env.PORT || 3000;
-const RENDER_API_KEY = process.env.RENDER_API_KEY;
-const RENDER_API_URL = process.env.RENDER_API_URL;
+const PORT = 'https://todolistrender-node.onrender.com' || 3000;
+const RENDER_API_KEY = 'rnd_NGFcDedXGwlIio3pJx3VUY2iQ3vG';
+const RENDER_API_URL = 'https://api.render.com/v1/services';
 
 // יצירת endpoint של GET
 app.get('/apps', async (req, res) => {
