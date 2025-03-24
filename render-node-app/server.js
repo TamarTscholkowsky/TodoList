@@ -2,7 +2,7 @@
 import axios from "axios"; // Import Axios for making HTTP requests
 import express from 'express'
 import dotenv from 'dotenv'
-import renderApi from '@api/render-api';
+
 dotenv.config();
 const RENDER_API_KEY = process.env.RENDER_API_KEY;
 const app = express();
@@ -16,9 +16,9 @@ app.get('/', async (req, res) => {
     const { data } = await axios.get('https://api.render.com/v1/services', {
       headers: { Authorization: `Bearer ${RENDER_API_KEY}` },
     });
-
     res.json(data);
-  } catch (error) {
+  } 
+  catch (error) {
     console.error('Error fetching apps from Render:', error.message);
     res.status(500).json({ error: 'Failed to fetch apps from Render' });
   }
