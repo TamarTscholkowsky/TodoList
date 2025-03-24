@@ -35,7 +35,7 @@ app.get('https://todolistrender-node.onrender.com', async (req, res) => {
 // הפעלת השרת
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
-  console.log('Render API URL:', RENDER_API_URL);
+  // console.log('Render API URL:', RENDER_API_URL);
    console.log('Render API Key:', RENDER_API_KEY ? 'Loaded' : 'Not loaded');
 
 });
