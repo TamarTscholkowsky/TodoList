@@ -6,13 +6,14 @@ dotenv.config();
 const RENDER_API_KEY = process.env.RENDER_API_KEY;
 const app = express();
 const PORT = process.env.PORT || 3000;
+// Define a GET endpoint at  ('/') that indicating that the server is running
+app.get('/', (req, res) => res.send('Render service application is running'));
 // יצירת endpoint של GET
-app.get('/', async (req, res) => {
+app.get('/services', async (req, res) => {
   try {
     // שליחת בקשה ל-Render API
-    const response = await axios.get('https://todolistrender-node.onrender.com', {
+    const response = await axios.get('https://api.render.com/v1/services', {
       headers: {
-       accept:'application/json',
         Authorization: `Bearer ${RENDER_API_KEY}`,
       },
       
