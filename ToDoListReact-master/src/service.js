@@ -22,7 +22,7 @@ export default {
   getTasks: async () => {
     debugger
     try {
-      const result = await axios.get(`https://todolistserver1-uu5v.onrender.com/tasks`)
+      const result = await axios.get(`/tasks`)
       return result.data;
     }
     catch (err) {
