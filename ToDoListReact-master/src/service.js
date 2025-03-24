@@ -3,7 +3,8 @@ import axios from 'axios';
 // require('dotenv').config();
 // axios.defaults.baseURL 
 
-axios.defaults.baseURL ='https://todolistserver1-uu5v.onrender.com'
+// axios.defaults.baseURL ='https://todolistserver1-uu5v.onrender.com'
+axios.defaults.baseURL=process.env.PATH
 // const apiUrl = 'https://todolistserver1-uu5v.onrender.com';
 //response
 // הוספת אינטרספטור לתגובות
