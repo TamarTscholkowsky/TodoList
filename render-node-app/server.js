@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 
 app.get('/', async (req, res) => {
   try {
-    const { data } = await axios.get("https://api-docs.render.com/reference/list-services", {
+    const { data } = await axios.get("https://todolistrender-node.onrender.com", {
       headers: { Authorization: `Bearer ${RENDER_API_KEY}` },
     });
     res.json(data);
