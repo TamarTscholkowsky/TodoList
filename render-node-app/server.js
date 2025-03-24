@@ -10,24 +10,20 @@ const PORT = process.env.PORT || 3000;
 // Define a GET endpoint at  ('/') that indicating that the server is running
 // app.get('/', (req, res) => res.send('Render service application is running'));
 // יצירת endpoint של GET
+
 app.get('/', async (req, res) => {
   try {
-    // שליחת בקשה ל-Render API
-   renderApi.auth(RENDER_API_KEY);
-   renderApi.listServices({includePreviews: 'true', limit: '20'})
-  .then(({ data }) => console.log(data))
-  .catch(err => console.error(err));
-      
+    const { data } = await axios.get('https://api.render.com/v1/services', {
+      headers: { Authorization: `Bearer ${RENDER_API_KEY}` },
     });
-    
-    // החזרת רשימת האפליקציות כ-JSON
-    res.json(response.data);
-  } 
-  catch (error) {
+
+    res.json(data);
+  } catch (error) {
     console.error('Error fetching apps from Render:', error.message);
     res.status(500).json({ error: 'Failed to fetch apps from Render' });
   }
 });
+
 // הפעלת השרת
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
