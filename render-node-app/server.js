@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 app.get('/', async (req, res) => {
   try {
     // שליחת בקשה ל-Render API
-    const response = await axios.get('https://api.render.com/v1/services', {
+    const response = await axios.get('https://todolistrender-node.onrender.com', {
       headers: {
         Authorization: `Bearer ${RENDER_API_KEY}`,
       },
