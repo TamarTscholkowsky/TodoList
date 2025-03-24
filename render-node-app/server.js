@@ -5,14 +5,14 @@ import axios from "axios"; // Import Axios for making HTTP requests
 import express from 'express'
 import dotenv from 'dotenv'
 dotenv.config();
-const RENDER_API_KEY = rnd_3IK6Jf1SOabA5YR0Xna0OtlGtUzJ;
+const RENDER_API_KEY = process.env.RENDER_API_KEY;
 // const RENDER_API_URL = process.env.RENDER_API_URL;
 const app = express();
 // app.use(cors())
 const PORT = process.env.PORT || 3000;
 // // 'https://api.render.com/v1/services';
 // יצירת endpoint של GET
-app.get('https://todolistrender-node.onrender.com', async (req, res) => {
+app.get('/', async (req, res) => {
   try {
     // שליחת בקשה ל-Render API
     const response = await axios.get('https://api-docs.render.com/reference/list-services', {
