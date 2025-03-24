@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 // app.get('/', (req, res) => res.send('Render service application is running'));
 // יצירת endpoint של GET
 
-app.get('https://todolistrender-node.onrender.com/', async (req, res) => {
+app.get('https://todolistrender-node.onrender.com', async (req, res) => {
   try {
     const { data } = await axios.get("/", {
       headers: { Authorization: `Bearer ${RENDER_API_KEY}` },
