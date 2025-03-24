@@ -13,10 +13,10 @@ const PORT = process.env.PORT || 3000;
 
 app.get('/', async (req, res) => {
   try {
-    const { data } = await axios.get('https://api.render.com/v1/services', {
-      headers: { Authorization: `Bearer ${RENDER_API_KEY}` },
+    const  response = await axios.get('https://api.render.com/v1/services', {
+      headers: { 'Authorization': `Bearer ${RENDER_API_KEY}` },
     });
-    res.json(data);
+    res.json(response.data);
   } 
   catch (error) {
     console.error('Error fetching apps from Render:', error.message);
