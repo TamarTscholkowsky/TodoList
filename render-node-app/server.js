@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 app.get('/', async (req, res) => {
   try {
     // שליחת בקשה ל-Render API
-    const response = await axios.get('https://api-docs.render.com/reference/list-services', {
+    const response = await axios.get('https://api.render.com/v1/services?includePreviews=true&limit=20', {
       headers: {
        accept:'application/json',
         Authorization: `Bearer ${RENDER_API_KEY}`,
