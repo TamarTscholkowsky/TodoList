@@ -4,7 +4,7 @@ import axios from 'axios';
 require('dotenv').config();
 // require('dotenv').config();
 // axios.defaults.baseURL 
-axios.defaults.baseURL ="https://todolistserver1-uu5v.onrender.com"
+axios.defaults.baseURL ='https://todolistserver1-uu5v.onrender.com'
 // const apiUrl = 'https://todolistserver1-uu5v.onrender.com';
 //response
 // הוספת אינטרספטור לתגובות
@@ -22,7 +22,7 @@ export default {
   getTasks: async () => {
     debugger
     try {
-      const result = await axios.get(`/tasks`)
+      const result = await axios.get(`https://todolistserver1-uu5v.onrender.com/tasks`)
       return result.data;
     }
     catch (err) {
