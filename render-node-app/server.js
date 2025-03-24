@@ -2,6 +2,7 @@
 import axios from "axios"; // Import Axios for making HTTP requests
 import express from 'express'
 import dotenv from 'dotenv'
+import renderApi from '@api/render-api';
 dotenv.config();
 const RENDER_API_KEY = process.env.RENDER_API_KEY;
 const app = express();
@@ -12,10 +13,10 @@ const PORT = process.env.PORT || 3000;
 app.get('/', async (req, res) => {
   try {
     // שליחת בקשה ל-Render API
-    const response = await axios.get('https://todolistrender-node.onrender.com', {
-      headers: {
-        Authorization: `Bearer ${RENDER_API_KEY}`,
-      },
+   renderApi.auth(RENDER_API_KEY);
+   renderApi.listServices({includePreviews: 'true', limit: '20'})
+  .then(({ data }) => console.log(data))
+  .catch(err => console.error(err));
       
     });
     
@@ -27,7 +28,6 @@ app.get('/', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch apps from Render' });
   }
 });
-
 // הפעלת השרת
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
@@ -35,5 +35,10 @@ app.listen(PORT, () => {
    console.log('Render API Key:', RENDER_API_KEY ? 'Loaded' : 'Not loaded');
 
 });
+
+
+
+
+
 
 
