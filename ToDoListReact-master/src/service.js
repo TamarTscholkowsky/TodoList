@@ -1,19 +1,15 @@
 import axios from 'axios';
 
-
-axios.defaults.baseURL = 'https://todolistserver1-uu5v.onrender.com'
+axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 
 //response
-// הוספת אינטרספטור לתגובות
 axios.interceptors.response.use(response => {
-  // החזרת התגובה במידה ואין שגיאות
   return response;
-}, error => {
-  // רישום השגיאה ללוג
-  console.error('Error occurred:', error);
-
-  return Promise.reject(error);
-});
+},
+  error => {
+    console.error('Error occurred:', error);
+    return Promise.reject(error);
+  });
 
 export default {
   getTasks: async () => {
@@ -28,7 +24,6 @@ export default {
   },
 
   addTask: async (name) => {
-
     console.log('addTask', name)
     try {
       const result = await axios.post(`/${name}`);
@@ -38,7 +33,7 @@ export default {
       console.log(err)
     }
   },
-  // MapPut("/tasks/{id}"
+
   setCompleted: async (id, isComplete) => {
     console.log('setCompleted', { id, isComplete })
     try {
@@ -48,7 +43,6 @@ export default {
     catch (err) {
       console.log(err)
     }
-
   },
 
   deleteTask: async (id) => {

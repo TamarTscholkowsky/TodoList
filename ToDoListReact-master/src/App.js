@@ -5,10 +5,9 @@ function App() {
   const [newTodo, setNewTodo] = useState("");
   const [todos, setTodos] = useState([]);
 
-  async function getTodos(){
+  async function getTodos() {
     const todos = await service.getTasks();
     setTodos(todos);
-    debugger
     console.log("נתונים שהוחזרו:", todos);
     setTodos(Array.isArray(todos) ? todos : []);
   }
@@ -26,7 +25,6 @@ function App() {
   }
 
   async function deleteTodo(id) {
-    
     await service.deleteTask(id);
     await getTodos();//refresh tasks list
   }
@@ -34,7 +32,6 @@ function App() {
   useEffect(() => {
     getTodos();
     console.log(todos)
-    debugger
   }, []);
 
   return (

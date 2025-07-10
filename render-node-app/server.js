@@ -1,9 +1,9 @@
 
 import axios from "axios"; // Import Axios for making HTTP requests
 import express from 'express'
-import dotenv from 'dotenv'
 
-dotenv.config();
+
+
 const RENDER_API_KEY = process.env.RENDER_API_KEY;
 const app = express();
 const PORT = process.env.PORT || 3000;
