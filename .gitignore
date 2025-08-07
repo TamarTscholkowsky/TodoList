@@ -1,0 +1,27 @@
+.env
+.env.*
+
+# Node.js
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# React
+build/
+dist/
+
+# C# / .NET
+bin/
+obj/
+*.user
+*.suo
+
+# VSCode / Visual Studio
+.vs/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
