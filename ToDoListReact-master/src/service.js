@@ -2,18 +2,15 @@ import axios from 'axios';
 
 axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 
-//response
 axios.interceptors.response.use(response => {
   return response;
 },
   error => {
-    console.error('Error occurred:', error);
     return Promise.reject(error);
   });
 
 export default {
   getTasks: async () => {
-    debugger
     try {
       const result = await axios.get(`/tasks`)
       return result.data;
@@ -24,7 +21,6 @@ export default {
   },
 
   addTask: async (name) => {
-    console.log('addTask', name)
     try {
       const result = await axios.post(`/${name}`);
       return result
@@ -35,7 +31,6 @@ export default {
   },
 
   setCompleted: async (id, isComplete) => {
-    console.log('setCompleted', { id, isComplete })
     try {
       const result = await axios.put(`/tasks/${id}/${isComplete}`, { isComplete })
       return result
@@ -53,6 +48,5 @@ export default {
     catch (err) {
       console.log(err)
     }
-
   }
 };
