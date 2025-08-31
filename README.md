@@ -6,7 +6,6 @@ A simple and intuitive Todo List application to help you organize your daily tas
 
 - Add, edit, and delete tasks
 - Mark tasks as completed or pending
-- Organize tasks by priority or due date
 - Responsive design for desktop and mobile use
 - Persistent storage to save your tasks
 
@@ -23,15 +22,12 @@ A simple and intuitive Todo List application to help you organize your daily tas
 2. Install dependencies:
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
 3. Start the application:
    ```bash
    npm start
-   # or
-   yarn start
+
    ```
 
 4. Open your browser and go to [http://localhost:3000](http://localhost:3000)
